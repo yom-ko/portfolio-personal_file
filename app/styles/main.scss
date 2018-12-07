@@ -1,3 +1,7 @@
+/* CONSTANTS */
+$text-color-primary: #2f1b15;
+$text-color: #3d3d3d;
+
 body {
   margin: 0;
   padding: 0;
@@ -11,6 +15,8 @@ body {
 
   background: url('../images/background.jpg') no-repeat;
   background-size: cover;
+
+  color: $text-color-primary;
 }
 
 .content {
@@ -22,38 +28,98 @@ body {
 
   margin: 0 auto;
 
-  & .header {
-    padding: 0;
-    padding-top: 48px;
+  display: grid;
+  grid-template-columns: 260px 269px 242px;
+  grid-template-rows: repeat(8, max-content);
 
-    border-bottom: 1px solid #4affff;
+  & .logo {
+    grid-column: 1;
+    grid-row: 1;
 
-    & .logo {
-      float: left;
-      margin: 0;
-      margin-top: 17px;
-    }
+    float: left;
+    margin: 0;
+    margin-top: 65px;
+  }
 
-    & .stamp {
-      position: relative;
-      right: -55.6%;
+  & .stamp {
+    grid-column: 3;
+    grid-row: 1;
 
-      margin: 0;
+    position: relative;
+    right: -21.6%;
+
+    margin: 0;
+    margin-top: 48px;
+  }
+
+  & .title {
+    grid-column: 2;
+    grid-row: 2;
+
+    display: block;
+    width: 218px;
+    margin: 0;
+    margin-bottom: 3em;
+  }
+
+  & .info-general {
+    grid-column: 1/4;
+    grid-row: 3;
+
+    margin: 0;
+    margin-bottom: 48px;
+
+    & .info-general__field {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      height: 3.6em;
+
+      & label {
+        color: $text-color-primary;
+        font-size: 1.3em;
+        font-weight: bold;
+      }
+
+      & input {
+        flex: auto;
+
+        margin-left: 17px;
+
+        padding: 0 16px;
+
+        background: transparent;
+
+        border-image: url('../images/text-input-border-bottom.png');
+        border-image-slice: 4;
+        border-bottom-width: 4px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 1.8em;
+        line-height: 1.5;
+      }
     }
   }
 
-  & .main {
-    display: grid;
-    grid-template-columns: 260px 269px 242px;
-    grid-template-rows: auto auto;
+  & .info-skills {
+    grid-column: 1/4;
+    grid-row: 4;
 
-    & .title {
-      grid-column: 2;
-      grid-row: 1;
+    padding: 0;
 
-      display: block;
-      width: 218px;
+    & .info-skills__title {
       margin: 0;
+      margin-bottom: 10px;
+    }
+
+    & .info-skills__description {
+      margin: 0;
+      color: $text-color;
     }
   }
 }

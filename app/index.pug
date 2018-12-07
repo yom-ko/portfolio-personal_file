@@ -9,8 +9,27 @@ html(lang="ru")
   body
     div.fullpage
       div.content
-        header.header
-          img(src="images/logo.png", alt="Логотип").logo
-          img(src="images/stamp.png", alt="Штамп").stamp
-        main.main
-          img(src="images/delo.png", alt="Дело").title
+        img(src="images/logo.png", alt="Логотип").logo
+        img(src="images/stamp.png", alt="Штамп").stamp
+        img(src="images/delo.png", alt="Дело").title
+        div.info-general
+          div.info-general__field
+            label(for="fullname") Полное ФИО
+            input(type="text", name="fullname")
+          div.info-general__field
+            label(for="fullname") Год рождения
+            input(type="text", name="fullname")
+          div.info-general__field
+            label(for="fullname") Место жительства
+            input(type="text", name="fullname")
+          div.info-general__field
+            label(for="fullname") Скайп
+            input(type="text", name="fullname")
+          div.info-general__field
+            label(for="fullname") Почта
+            input(type="text", name="fullname")
+        div.info-skills
+          h2.info-skills__title Расскажите о себе чекбоксами
+          p.info-skills__description Отметьте чекбоксами пункты, которые соответствуют вашим скиллам. Кстати, отсутствие опыта не означает, что у вас меньше шансов стать одним из наших товарищей. Это означает, что вы будете получать те задачи, с которыми гарантировано будете справляться.
+          div.info-skills__checkmarks
+
