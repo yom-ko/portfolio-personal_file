@@ -1,0 +1,9 @@
+# Project dependencies
+.cache
+node_modules
+yarn-error.log
+
+# Build and temp directory
+/public
+/dist
+/.tmp

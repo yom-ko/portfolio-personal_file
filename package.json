@@ -1,0 +1,41 @@
+{
+  "name": "test_csssr",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "global": "^4.3.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
+    "browser-sync": "2.26.3",
+    "del": "^3.0.0",
+    "eslint": "5.9.0",
+    "eslint-config-airbnb-base": "13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "gulp": "3.9.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-csso": "^3.0.1",
+    "gulp-ext-replace": "^0.3.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-load-plugins": "1.5.0",
+    "gulp-plumber": "1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.1",
+    "gulp-useref": "^3.1.6",
+    "gulp-watch": "5.0.1",
+    "imagemin-webp": "^5.0.0",
+    "node-sass": "^4.10.0",
+    "postcss-preset-env": "^6.4.0",
+    "prettier": "1.15.3",
+    "prettier-eslint": "8.8.2",
+    "rename": "^1.0.4",
+    "run-sequence": "2.2.1"
+  }
+}
