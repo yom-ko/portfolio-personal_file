@@ -4,6 +4,7 @@ html(lang="ru")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title Анкета – CSSSR
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic")
     link(rel="stylesheet", href="styles/sanitize.css")
     link(rel="stylesheet", href="styles/main.css")
   body
@@ -96,11 +97,11 @@ html(lang="ru")
               img(src="images/input-checkbox-background-checked.png", alt="")
           div.info-skills__field
             input(type="checkbox", id="good_eye" name="good_eye")
-            label(for="good_eye") С глазомером всё ОК
+            label(for="good_eye") С глазомером всё ок
               img(src="images/input-checkbox-background-checked.png", alt="")
           div.info-skills__field
             input(type="checkbox", id="blog_csssr" name="blog_csssr")
-            label(for="blog_csssr") Читаю blog.csssr.ru
+            label(for="blog_csssr") Читаю #[a(href="https://blog.csssr.ru/", title="Блог компании CSSSR") blog.csssr.ru]
               img(src="images/input-checkbox-background-checked.png", alt="")
           div.info-skills__field
             input(type="checkbox", id="laziness" name="laziness")
