@@ -121,6 +121,18 @@ html(lang="ru")
           h2.info-future__title Какие у вас планы на будущее?
           p.info-future__description Этот ответ ни на что не повлияет. Не беда, если в будущем ваши планы поменяются.
           div.info-future__checkmarks
+            div.info-future-field
+              input(type="radio", name="future" id="css")
+              label(for="css") Верстать
+            div.info-future-field
+              input(type="radio", name="future" id="js" checked)
+              label(for="js") Прокачиваться в JS
+            div.info-future-field
+              input(type="radio", name="future" id="management")
+              label(for="management") Менеджерство
+            div.info-future-field
+              input(type="radio", name="future" id="other")
+              label(for="other") Другое
         div.date
           label(for="date") Дата заполнения
           input(type="text", name="date" id="date" value="10.12.2018")

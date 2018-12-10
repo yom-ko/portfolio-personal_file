@@ -249,6 +249,57 @@ body {
     & .info-future__description {
       font-size: 0.94em;
     }
+
+    & .info-future__checkmarks {
+      & .info-future-field {
+        position: relative;
+
+        margin: 0;
+        margin-right: 17px;
+
+        display: inline-block;
+
+        & input {
+          opacity: 0;
+          position: absolute;
+          cursor: pointer;
+        }
+
+        & input + label,
+        & input + label::before {
+          cursor: pointer;
+        }
+
+        & input + label {
+          margin: 0;
+          margin-left: -8px;
+
+          color: $color-text-checkbox;
+          font-size: 1.25em;
+          font-weight: bold;
+
+          vertical-align: middle;
+        }
+
+        & input + label::before {
+          content: url('../images/input-radio-border.png');
+          display: inline-block;
+
+          margin: 0;
+
+          width: 42px;
+          height: 45px;
+
+          vertical-align: middle;
+        }
+
+        & input:checked + label::before {
+          background: url('../images/input-radio-background-checked.png');
+          background-repeat: no-repeat;
+          background-position: 48% 70%;
+        }
+      }
+    }
   }
 
   & .date {
