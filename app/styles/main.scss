@@ -211,4 +211,80 @@ body {
       top: -10px;
     }
   }
+
+  & .info-js {
+    grid-column: 1 / 4;
+    grid-row: 6;
+
+    margin-bottom: 48px;
+  }
+
+  & .info-about {
+    grid-column: 1 / 4;
+    grid-row: 7;
+
+    margin-bottom: 48px;
+
+    & .info-about__title {
+      margin: 0;
+      margin-bottom: 10px;
+    }
+
+    & .info-about__description {
+      font-size: 0.94em;
+    }
+  }
+
+  & .info-future {
+    grid-column: 1 / 4;
+    grid-row: 8;
+
+    margin-bottom: 48px;
+
+    & .info-future__title {
+      margin: 0;
+      margin-bottom: 10px;
+    }
+
+    & .info-future__description {
+      font-size: 0.94em;
+    }
+  }
+
+  & .date {
+    grid-column: 1 / 4;
+    grid-row: 9;
+
+    display: table-cell;
+
+    & label {
+      display: inline-block;
+      vertical-align: bottom;
+
+      font-size: 1.3em;
+      font-weight: bold;
+    }
+
+    & input {
+      display: inline-block;
+      vertical-align: bottom;
+
+      margin-left: 17px;
+      padding: 0 16px;
+
+      width: 206px;
+
+      background: transparent;
+      border-image: url(../images/input-text-border-bottom.png);
+      border-image-slice: 4;
+      border-bottom-width: 4px;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 1.8em;
+      line-height: 1.5;
+    }
+  }
 }
