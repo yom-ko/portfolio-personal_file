@@ -104,6 +104,10 @@ body {
         font-size: 1.8em;
         line-height: 1.5;
       }
+
+      & input:focus {
+        outline: none;
+      }
     }
   }
 
@@ -186,6 +190,10 @@ body {
     & input:checked + label > img {
       visibility: visible;
     }
+
+    & a[href='https://blog.csssr.ru/'] {
+      color: #1f5f97;
+    }
   }
 
   & .info-skills__checkmarks-col1 {
@@ -247,6 +255,10 @@ body {
       font-family: 'Courier New', Courier, monospace;
       font-size: 2rem;
       line-height: 3rem;
+    }
+
+    & .info-about__textinput:focus {
+      outline: none;
     }
   }
 
