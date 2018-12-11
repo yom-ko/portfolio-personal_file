@@ -2,6 +2,8 @@
 $color-text-primary: #2f1b15;
 $color-text-checkbox: #000;
 $color-text-paragraph: #3d3d3d;
+$fontSize-paragraph: 0.94em;
+$lineHeight-paragraph: 1.55;
 
 body {
   margin: 0;
@@ -26,14 +28,11 @@ body {
   width: 771px;
   height: 100%;
 
-  // border-left: 1px solid #4affff;
-  // border-right: 1px solid #4affff;
-
   margin: 0 auto;
 
   display: grid;
   grid-template-columns: 260px 269px 242px;
-  grid-template-rows: repeat(8, max-content);
+  grid-template-rows: repeat(9, max-content);
 
   & .logo {
     grid-column: 1;
@@ -41,7 +40,7 @@ body {
 
     float: left;
     margin: 0;
-    margin-top: 65px;
+    margin-top: 63px;
   }
 
   & .stamp {
@@ -62,7 +61,7 @@ body {
     display: block;
     width: 218px;
     margin: 0;
-    margin-bottom: 3em;
+    margin-bottom: 40px;
   }
 
   & .info-general {
@@ -70,7 +69,7 @@ body {
     grid-row: 3;
 
     margin: 0;
-    margin-bottom: 48px;
+    margin-bottom: 65px;
 
     & .info-general__field {
       display: flex;
@@ -81,7 +80,7 @@ body {
       height: 3.6em;
 
       & label {
-        font-size: 1.3em;
+        font-size: 1.35em;
         font-weight: bold;
       }
 
@@ -101,8 +100,8 @@ body {
         border-right: none;
 
         font-family: 'Courier New', Courier, monospace;
-        font-size: 1.8em;
-        line-height: 1.5;
+        font-size: 1.85rem;
+        line-height: 45px;
       }
 
       & input:focus {
@@ -119,14 +118,15 @@ body {
 
     & .info-skills__title {
       margin: 0;
-      margin-bottom: 10px;
+      margin-bottom: 11px;
     }
 
     & .info-skills__description {
       margin: 0;
-      margin-bottom: 25px;
+      margin-bottom: 30px;
 
-      font-size: 0.94em;
+      font-size: $fontSize-paragraph;
+      line-height: $lineHeight-paragraph;
 
       color: $color-text-paragraph;
     }
@@ -191,12 +191,27 @@ body {
       visibility: visible;
     }
 
+    & .bloglink {
+      position: relative;
+    }
+
     & a[href='https://blog.csssr.ru/'] {
       color: #1f5f97;
       text-decoration: none;
+    }
 
-      padding: 0;
-      border-bottom: 1px solid #1f5f97;
+    & a[href='https://blog.csssr.ru/']::after {
+      content: '';
+
+      position: absolute;
+      bottom: 1px;
+      left: 0;
+
+      height: 1px;
+      width: 100%;
+
+      border: none;
+      border-top: 1px solid #1f5f97;
     }
   }
 
@@ -231,12 +246,12 @@ body {
     margin-bottom: 72px;
 
     & .info-js__title {
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
     & .info-js__clickzone {
       width: 100%;
-      height: 20px;
+      height: 24px;
 
       margin: 0;
       padding: 0;
@@ -256,7 +271,7 @@ body {
       & .arrow {
         position: absolute;
 
-        left: -10px;
+        left: 367px; // My current level of JS
         top: -18px;
 
         width: 17px;
@@ -334,7 +349,7 @@ body {
     grid-column: 1 / 4;
     grid-row: 7;
 
-    margin-bottom: 48px;
+    margin-bottom: 44px;
 
     & .info-about__title {
       margin: 0;
@@ -342,13 +357,14 @@ body {
     }
 
     & .info-about__description {
-      font-size: 0.94em;
-      margin-bottom: 32px;
+      margin-bottom: 26px;
+
+      font-size: $fontSize-paragraph;
+      line-height: $lineHeight-paragraph;
     }
 
     & .info-about__textinput {
       width: 100%;
-      max-height: 280px;
 
       background: transparent url('../images/input-textarea-background.png');
       background-size: 100% 62px;
@@ -379,7 +395,10 @@ body {
     }
 
     & .info-future__description {
-      font-size: 0.94em;
+      margin: 0;
+      margin-bottom: 9px;
+
+      font-size: $fontSize-paragraph;
     }
 
     & .info-future__checkmarks {
@@ -468,6 +487,10 @@ body {
       font-family: 'Courier New', Courier, monospace;
       font-size: 1.8em;
       line-height: 1.5;
+    }
+
+    & input:focus {
+      outline: none;
     }
   }
 }
