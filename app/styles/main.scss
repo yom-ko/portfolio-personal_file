@@ -193,6 +193,10 @@ body {
 
     & a[href='https://blog.csssr.ru/'] {
       color: #1f5f97;
+      text-decoration: none;
+
+      padding: 0;
+      border-bottom: 1px solid #1f5f97;
     }
   }
 
@@ -224,7 +228,97 @@ body {
     grid-column: 1 / 4;
     grid-row: 6;
 
-    margin-bottom: 48px;
+    margin-bottom: 72px;
+
+    & .info-js__title {
+      margin-bottom: 44px;
+    }
+
+    & .info-js__slider {
+      position: relative;
+
+      width: 769px;
+      height: 26px;
+
+      border-top: none;
+      border-bottom: none;
+      border-left: 3px solid #3f241e;
+      border-right: 3px solid #3f241e;
+
+      & .arrow {
+        position: absolute;
+
+        left: -10px;
+        top: -18px;
+
+        width: 17px;
+        height: 14px;
+
+        background: url('../images/slider-arrow.png');
+      }
+
+      & .border-top {
+        position: relative;
+        top: -2px;
+
+        margin: 0;
+
+        width: 770px;
+        height: 6px;
+        border: none;
+
+        background: url('../images/input-textarea-background.png');
+        background-position: -8px -26px;
+      }
+    }
+
+    & .notch {
+      position: absolute;
+      top: 2;
+
+      width: 3px;
+      height: 10px;
+
+      background: #3f241e;
+
+      &.notch-1 {
+        left: 146px;
+      }
+
+      &.notch-2 {
+        left: 374px;
+      }
+    }
+
+    & .caption {
+      position: absolute;
+      top: 34px;
+
+      margin: 0;
+      padding: 0;
+
+      display: inline-block;
+
+      font-size: 0.81em;
+      font-weight: bold;
+
+      &.caption-1 {
+        left: -4px;
+      }
+
+      &.caption-2 {
+        left: 142px;
+      }
+
+      &.caption-3 {
+        left: 372px;
+        width: 168px;
+      }
+
+      &.caption-4 {
+        right: -2px;
+      }
+    }
   }
 
   & .info-about {
@@ -240,21 +334,23 @@ body {
 
     & .info-about__description {
       font-size: 0.94em;
+      margin-bottom: 32px;
     }
 
     & .info-about__textinput {
       width: 100%;
-      max-height: 338px;
+      max-height: 280px;
 
       background: transparent url('../images/input-textarea-background.png');
-      background-size: 100% 3rem;
+      background-size: 100% 62px;
       background-position-y: 20px;
+      background-position-x: -5px;
 
       overflow: hidden;
 
       font-family: 'Courier New', Courier, monospace;
       font-size: 2rem;
-      line-height: 3rem;
+      line-height: 62px;
     }
 
     & .info-about__textinput:focus {
@@ -266,7 +362,7 @@ body {
     grid-column: 1 / 4;
     grid-row: 8;
 
-    margin-bottom: 48px;
+    margin-bottom: 65px;
 
     & .info-future__title {
       margin: 0;

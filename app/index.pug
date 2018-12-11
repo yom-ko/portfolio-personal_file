@@ -7,6 +7,7 @@ html(lang="ru")
     link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic")
     link(rel="stylesheet", href="styles/sanitize.css")
     link(rel="stylesheet", href="styles/main.css")
+    script(src="js/main.js")
   body
     div.fullpage
       div.content
@@ -112,8 +113,16 @@ html(lang="ru")
             label(for="good_english") <div>У меня хороший английский</div>
               img(src="images/input-checkbox-background-checked.png", alt="")
         div.info-js
-          h2 Уровень владения JavaScript
+          h2.info-js__title Уровень владения JavaScript
           div.info-js__slider
+            div.arrow
+            div.border-top
+            div.notch.notch-1
+            div.notch.notch-2
+            div.caption.caption-1 Не владею
+            div.caption.caption-2 Использую готовые решения
+            div.caption.caption-3 Использую готовые решения и умею их переделывать
+            div.caption.caption-4 Пишу сложный JS с нуля
         div.info-about
           h2.info-about__title Расскажите о себе словами
           p.info-about__description Напишите пару предложений, чем вас привлекла наша вакансия и чего вы ожидаете от работы в CSSSR. Кстати, будет здорово, если при нехватке места для текста строки будут добавляться автоматически.
