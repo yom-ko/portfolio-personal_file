@@ -7,7 +7,6 @@ html(lang="ru")
     link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic")
     link(rel="stylesheet", href="styles/sanitize.css")
     link(rel="stylesheet", href="styles/main.css")
-    script(src="js/main.js")
   body
     div.fullpage
       div.content
@@ -114,6 +113,7 @@ html(lang="ru")
               img(src="images/input-checkbox-background-checked.png", alt="")
         div.info-js
           h2.info-js__title Уровень владения JavaScript
+          div.info-js__clickzone
           div.info-js__slider
             div.arrow
             div.border-top
@@ -146,4 +146,4 @@ html(lang="ru")
         div.date
           label(for="date") Дата заполнения
           input(type="text", name="date" id="date" value="10.12.2018")
-
+    script(src="js/main.js")
