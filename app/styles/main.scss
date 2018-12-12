@@ -1,4 +1,4 @@
-/* CONSTANTS */
+/* VARIABLES */
 $color-text-primary: #2f1b15;
 $color-text-checkbox: #000;
 $color-text-paragraph: #3d3d3d;
@@ -6,15 +6,13 @@ $fontSize-paragraph: 0.94em;
 $lineHeight-paragraph: 1.55;
 
 body {
-  margin: 0;
-  padding: 0;
-
+  background: #797979;
   font-family: 'PT Sans', sans-serif;
 }
 
 .fullpage {
   width: 1000px;
-  height: 2582px;
+  height: 2560px;
 
   margin: 0 auto;
 
@@ -22,77 +20,462 @@ body {
   background-size: cover;
 
   color: $color-text-primary;
-}
 
-.content {
-  width: 771px;
-  height: 100%;
+  .content {
+    width: 771px;
+    height: 100%;
 
-  margin: 0 auto;
+    margin: 0 auto;
 
-  display: grid;
-  grid-template-columns: 260px 269px 242px;
-  grid-template-rows: repeat(9, max-content);
+    display: grid;
+    grid-template-columns: 260px 269px 242px;
+    grid-template-rows: repeat(9, max-content);
 
-  & .logo {
-    grid-column: 1;
-    grid-row: 1;
+    & .logo {
+      grid-column: 1;
+      grid-row: 1;
 
-    float: left;
-    margin: 0;
-    margin-top: 63px;
-  }
+      float: left;
+      margin: 0;
+      margin-top: 62px;
+    }
 
-  & .stamp {
-    grid-column: 3;
-    grid-row: 1;
+    & .stamp {
+      grid-column: 3;
+      grid-row: 1;
 
-    position: relative;
-    right: -21.6%;
+      position: relative;
+      right: -21.6%;
 
-    margin: 0;
-    margin-top: 48px;
-  }
+      margin: 0;
+      margin-top: 48px;
+    }
 
-  & .title {
-    grid-column: 2;
-    grid-row: 2;
+    & .title {
+      grid-column: 2;
+      grid-row: 2;
 
-    display: block;
-    width: 218px;
-    margin: 0;
-    margin-bottom: 40px;
-  }
+      display: block;
+      width: 218px;
+      margin: 0;
+      margin-bottom: 37px;
+    }
 
-  & .info-general {
-    grid-column: 1/4;
-    grid-row: 3;
+    & .info-general {
+      grid-column: 1/4;
+      grid-row: 3;
 
-    margin: 0;
-    margin-bottom: 65px;
+      margin: 0;
+      margin-bottom: 65px;
 
-    & .info-general__field {
+      & .info-general__field {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        height: 62px;
+
+        & label {
+          font-size: 1.35em;
+          font-weight: bold;
+        }
+
+        & input {
+          flex: auto;
+
+          margin-left: 17px;
+          padding: 0 16px;
+
+          background: transparent;
+
+          border-image: url('../images/input-text-border-bottom.png');
+          border-image-slice: 4;
+          border-bottom-width: 4px;
+          border-top: none;
+          border-left: none;
+          border-right: none;
+
+          font-family: 'Courier New', Courier, monospace;
+          font-size: 1.85rem;
+          line-height: 32px;
+        }
+
+        & input:focus {
+          outline: none;
+        }
+      }
+    }
+
+    & .info-skills {
+      grid-column: 1/4;
+      grid-row: 4;
+
+      padding: 0;
+
+      & .info-skills__title {
+        margin: 0;
+        margin-bottom: 8px;
+      }
+
+      & .info-skills__description {
+        margin: 0;
+        margin-bottom: 27px;
+
+        font-size: $fontSize-paragraph;
+        line-height: $lineHeight-paragraph;
+
+        color: $color-text-paragraph;
+      }
+    }
+
+    & [class^='info-skills__checkmarks'] {
+      color: $color-text-checkbox;
+      font-size: 1.3em;
+      font-weight: bold;
+
+      margin-bottom: 30px;
+    }
+
+    & .info-skills__field {
+      position: relative;
+
+      margin: 0;
+      margin-bottom: 12px;
+
       display: flex;
       flex-flow: row wrap;
-      justify-content: space-between;
-      align-items: flex-end;
+      justify-content: flex-start;
+      align-items: center;
 
-      height: 3.6em;
+      & input {
+        opacity: 0;
+        position: absolute;
+        cursor: pointer;
+      }
+
+      & input + label > img {
+        position: absolute;
+        visibility: hidden;
+        top: -5px;
+        left: 3px;
+        cursor: pointer;
+      }
+
+      & input + label,
+      & input + label::before {
+        cursor: pointer;
+      }
+
+      & input + label::before {
+        content: '';
+        display: inline-block;
+
+        margin-right: 10px;
+
+        width: 18px;
+        height: 18px;
+
+        border-style: solid;
+        border-image: url('../images/input-checkbox-border.png');
+        border-image-slice: 3;
+        border-image-width: 3px;
+
+        vertical-align: middle;
+      }
+
+      & input:checked + label > img {
+        visibility: visible;
+      }
+
+      & .bloglink {
+        position: relative;
+      }
+
+      & a[href='https://blog.csssr.ru/'] {
+        color: #1f5f97;
+        text-decoration: none;
+      }
+
+      & a[href='https://blog.csssr.ru/']::after {
+        content: '';
+
+        position: absolute;
+        bottom: 1px;
+        left: 0;
+
+        height: 1px;
+        width: 100%;
+
+        border: none;
+        border-top: 1px solid #1f5f97;
+      }
+    }
+
+    & .info-skills__checkmarks-col1 {
+      grid-column: 1;
+      grid-row: 5;
+    }
+
+    & .info-skills__checkmarks-col2 {
+      grid-column: 2;
+      grid-row: 5;
+    }
+
+    & .info-skills__checkmarks-col3 {
+      grid-column: 3;
+      grid-row: 5;
+
+      & .info-skills__field > label > div {
+        width: 88%;
+        float: right;
+      }
+
+      & .info-skills__field:last-child input + label > img {
+        top: -10px;
+      }
+    }
+
+    & .info-js {
+      grid-column: 1 / 4;
+      grid-row: 6;
+
+      margin-bottom: 71px;
+
+      & .info-js__title {
+        margin-bottom: 19px;
+      }
+
+      & .info-js__clickzone {
+        width: 100%;
+        height: 24px;
+
+        margin: 0;
+        padding: 0;
+      }
+
+      & .info-js__slider {
+        position: relative;
+
+        width: 769px;
+        height: 25px;
+
+        border-top: none;
+        border-bottom: none;
+        border-left: 3px solid #3f241e;
+        border-right: 3px solid #3f241e;
+
+        & .arrow {
+          position: absolute;
+
+          left: 367px; // My current level of JS
+          top: -18px;
+
+          width: 17px;
+          height: 14px;
+
+          background: url('../images/slider-arrow.png');
+          transition: all 0.3s ease-out;
+        }
+
+        & .border-top {
+          position: relative;
+          top: -2px;
+
+          margin: 0;
+
+          width: 770px;
+          height: 6px;
+          border: none;
+
+          background: url('../images/input-textarea-background.png');
+          background-position: -8px -26px;
+        }
+      }
+
+      & .notch {
+        position: absolute;
+        top: 2;
+
+        width: 3px;
+        height: 10px;
+
+        background: #3f241e;
+
+        &.notch-1 {
+          left: 146px;
+        }
+
+        &.notch-2 {
+          left: 374px;
+        }
+      }
+
+      & .caption {
+        position: absolute;
+        top: 34px;
+
+        margin: 0;
+        padding: 0;
+
+        display: inline-block;
+
+        font-size: 0.81em;
+        font-weight: bold;
+
+        &.caption-1 {
+          left: -4px;
+        }
+
+        &.caption-2 {
+          left: 142px;
+        }
+
+        &.caption-3 {
+          left: 372px;
+          width: 168px;
+        }
+
+        &.caption-4 {
+          right: -2px;
+        }
+      }
+    }
+
+    & .info-about {
+      grid-column: 1 / 4;
+      grid-row: 7;
+
+      margin-bottom: 44px;
+
+      & .info-about__title {
+        margin: 0;
+        margin-bottom: 12px;
+      }
+
+      & .info-about__description {
+        margin: 0;
+        margin-bottom: 23px;
+
+        font-size: $fontSize-paragraph;
+        line-height: $lineHeight-paragraph;
+      }
+
+      & .info-about__textinput {
+        width: 100%;
+
+        background: transparent url('../images/input-textarea-background.png');
+        background-size: 100% 60px;
+        background-position-y: 20px;
+        background-position-x: -5px;
+
+        overflow: hidden;
+
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 2rem;
+        line-height: 60px;
+      }
+
+      & .info-about__textinput:focus {
+        outline: none;
+      }
+    }
+
+    & .info-future {
+      grid-column: 1 / 4;
+      grid-row: 8;
+
+      margin-bottom: 65px;
+
+      & .info-future__title {
+        margin: 0;
+        margin-bottom: 10px;
+      }
+
+      & .info-future__description {
+        margin: 0;
+        margin-bottom: 9px;
+
+        font-size: $fontSize-paragraph;
+      }
+
+      & .info-future__checkmarks {
+        & .info-future-field {
+          position: relative;
+
+          margin: 0;
+          margin-right: 17px;
+
+          display: inline-block;
+
+          & input {
+            opacity: 0;
+            position: absolute;
+            cursor: pointer;
+          }
+
+          & input + label,
+          & input + label::before {
+            cursor: pointer;
+          }
+
+          & input + label {
+            margin: 0;
+            margin-left: -8px;
+
+            color: $color-text-checkbox;
+            font-size: 1.25em;
+            font-weight: bold;
+
+            vertical-align: middle;
+          }
+
+          & input + label::before {
+            content: url('../images/input-radio-border.png');
+            display: inline-block;
+
+            margin: 0;
+
+            width: 42px;
+            height: 45px;
+
+            vertical-align: middle;
+          }
+
+          & input:checked + label::before {
+            background: url('../images/input-radio-background-checked.png');
+            background-repeat: no-repeat;
+            background-position: 48% 70%;
+          }
+        }
+      }
+    }
+
+    & .date {
+      grid-column: 1 / 4;
+      grid-row: 9;
+
+      display: table-cell;
 
       & label {
-        font-size: 1.35em;
+        display: inline-block;
+        vertical-align: bottom;
+
+        font-size: 1.3em;
         font-weight: bold;
       }
 
       & input {
-        flex: auto;
+        display: inline-block;
+        vertical-align: bottom;
 
         margin-left: 17px;
         padding: 0 16px;
 
-        background: transparent;
+        width: 206px;
 
-        border-image: url('../images/input-text-border-bottom.png');
+        background: transparent;
+        border-image: url(../images/input-text-border-bottom.png);
         border-image-slice: 4;
         border-bottom-width: 4px;
         border-top: none;
@@ -100,397 +483,13 @@ body {
         border-right: none;
 
         font-family: 'Courier New', Courier, monospace;
-        font-size: 1.85rem;
-        line-height: 45px;
+        font-size: 1.8em;
+        line-height: 1.5;
       }
 
       & input:focus {
         outline: none;
       }
-    }
-  }
-
-  & .info-skills {
-    grid-column: 1/4;
-    grid-row: 4;
-
-    padding: 0;
-
-    & .info-skills__title {
-      margin: 0;
-      margin-bottom: 11px;
-    }
-
-    & .info-skills__description {
-      margin: 0;
-      margin-bottom: 30px;
-
-      font-size: $fontSize-paragraph;
-      line-height: $lineHeight-paragraph;
-
-      color: $color-text-paragraph;
-    }
-  }
-
-  & [class^='info-skills__checkmarks'] {
-    color: $color-text-checkbox;
-    font-size: 1.3em;
-    font-weight: bold;
-
-    margin-bottom: 30px;
-  }
-
-  & .info-skills__field {
-    position: relative;
-
-    margin: 0;
-    margin-bottom: 12px;
-
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: center;
-
-    & input {
-      opacity: 0;
-      position: absolute;
-      cursor: pointer;
-    }
-
-    & input + label > img {
-      position: absolute;
-      visibility: hidden;
-      top: -5px;
-      left: 3px;
-      cursor: pointer;
-    }
-
-    & input + label,
-    & input + label::before {
-      cursor: pointer;
-    }
-
-    & input + label::before {
-      content: '';
-      display: inline-block;
-
-      margin-right: 10px;
-
-      width: 18px;
-      height: 18px;
-
-      border-style: solid;
-      border-image: url('../images/input-checkbox-border.png');
-      border-image-slice: 3;
-      border-image-width: 3px;
-
-      vertical-align: middle;
-    }
-
-    & input:checked + label > img {
-      visibility: visible;
-    }
-
-    & .bloglink {
-      position: relative;
-    }
-
-    & a[href='https://blog.csssr.ru/'] {
-      color: #1f5f97;
-      text-decoration: none;
-    }
-
-    & a[href='https://blog.csssr.ru/']::after {
-      content: '';
-
-      position: absolute;
-      bottom: 1px;
-      left: 0;
-
-      height: 1px;
-      width: 100%;
-
-      border: none;
-      border-top: 1px solid #1f5f97;
-    }
-  }
-
-  & .info-skills__checkmarks-col1 {
-    grid-column: 1;
-    grid-row: 5;
-  }
-
-  & .info-skills__checkmarks-col2 {
-    grid-column: 2;
-    grid-row: 5;
-  }
-
-  & .info-skills__checkmarks-col3 {
-    grid-column: 3;
-    grid-row: 5;
-
-    & .info-skills__field > label > div {
-      width: 88%;
-      float: right;
-    }
-
-    & .info-skills__field:last-child input + label > img {
-      top: -10px;
-    }
-  }
-
-  & .info-js {
-    grid-column: 1 / 4;
-    grid-row: 6;
-
-    margin-bottom: 72px;
-
-    & .info-js__title {
-      margin-bottom: 20px;
-    }
-
-    & .info-js__clickzone {
-      width: 100%;
-      height: 24px;
-
-      margin: 0;
-      padding: 0;
-    }
-
-    & .info-js__slider {
-      position: relative;
-
-      width: 769px;
-      height: 26px;
-
-      border-top: none;
-      border-bottom: none;
-      border-left: 3px solid #3f241e;
-      border-right: 3px solid #3f241e;
-
-      & .arrow {
-        position: absolute;
-
-        left: 367px; // My current level of JS
-        top: -18px;
-
-        width: 17px;
-        height: 14px;
-
-        background: url('../images/slider-arrow.png');
-        transition: all 0.3s ease-out;
-      }
-
-      & .border-top {
-        position: relative;
-        top: -2px;
-
-        margin: 0;
-
-        width: 770px;
-        height: 6px;
-        border: none;
-
-        background: url('../images/input-textarea-background.png');
-        background-position: -8px -26px;
-      }
-    }
-
-    & .notch {
-      position: absolute;
-      top: 2;
-
-      width: 3px;
-      height: 10px;
-
-      background: #3f241e;
-
-      &.notch-1 {
-        left: 146px;
-      }
-
-      &.notch-2 {
-        left: 374px;
-      }
-    }
-
-    & .caption {
-      position: absolute;
-      top: 34px;
-
-      margin: 0;
-      padding: 0;
-
-      display: inline-block;
-
-      font-size: 0.81em;
-      font-weight: bold;
-
-      &.caption-1 {
-        left: -4px;
-      }
-
-      &.caption-2 {
-        left: 142px;
-      }
-
-      &.caption-3 {
-        left: 372px;
-        width: 168px;
-      }
-
-      &.caption-4 {
-        right: -2px;
-      }
-    }
-  }
-
-  & .info-about {
-    grid-column: 1 / 4;
-    grid-row: 7;
-
-    margin-bottom: 44px;
-
-    & .info-about__title {
-      margin: 0;
-      margin-bottom: 10px;
-    }
-
-    & .info-about__description {
-      margin-bottom: 26px;
-
-      font-size: $fontSize-paragraph;
-      line-height: $lineHeight-paragraph;
-    }
-
-    & .info-about__textinput {
-      width: 100%;
-
-      background: transparent url('../images/input-textarea-background.png');
-      background-size: 100% 62px;
-      background-position-y: 20px;
-      background-position-x: -5px;
-
-      overflow: hidden;
-
-      font-family: 'Courier New', Courier, monospace;
-      font-size: 2rem;
-      line-height: 62px;
-    }
-
-    & .info-about__textinput:focus {
-      outline: none;
-    }
-  }
-
-  & .info-future {
-    grid-column: 1 / 4;
-    grid-row: 8;
-
-    margin-bottom: 65px;
-
-    & .info-future__title {
-      margin: 0;
-      margin-bottom: 10px;
-    }
-
-    & .info-future__description {
-      margin: 0;
-      margin-bottom: 9px;
-
-      font-size: $fontSize-paragraph;
-    }
-
-    & .info-future__checkmarks {
-      & .info-future-field {
-        position: relative;
-
-        margin: 0;
-        margin-right: 17px;
-
-        display: inline-block;
-
-        & input {
-          opacity: 0;
-          position: absolute;
-          cursor: pointer;
-        }
-
-        & input + label,
-        & input + label::before {
-          cursor: pointer;
-        }
-
-        & input + label {
-          margin: 0;
-          margin-left: -8px;
-
-          color: $color-text-checkbox;
-          font-size: 1.25em;
-          font-weight: bold;
-
-          vertical-align: middle;
-        }
-
-        & input + label::before {
-          content: url('../images/input-radio-border.png');
-          display: inline-block;
-
-          margin: 0;
-
-          width: 42px;
-          height: 45px;
-
-          vertical-align: middle;
-        }
-
-        & input:checked + label::before {
-          background: url('../images/input-radio-background-checked.png');
-          background-repeat: no-repeat;
-          background-position: 48% 70%;
-        }
-      }
-    }
-  }
-
-  & .date {
-    grid-column: 1 / 4;
-    grid-row: 9;
-
-    display: table-cell;
-
-    & label {
-      display: inline-block;
-      vertical-align: bottom;
-
-      font-size: 1.3em;
-      font-weight: bold;
-    }
-
-    & input {
-      display: inline-block;
-      vertical-align: bottom;
-
-      margin-left: 17px;
-      padding: 0 16px;
-
-      width: 206px;
-
-      background: transparent;
-      border-image: url(../images/input-text-border-bottom.png);
-      border-image-slice: 4;
-      border-bottom-width: 4px;
-      border-top: none;
-      border-left: none;
-      border-right: none;
-
-      font-family: 'Courier New', Courier, monospace;
-      font-size: 1.8em;
-      line-height: 1.5;
-    }
-
-    & input:focus {
-      outline: none;
     }
   }
 }

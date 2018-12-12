@@ -1,19 +1,21 @@
 html(lang="ru")
   head
-    meta(charset="UTF-8")
+    meta(charset="utf-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    title Анкета – CSSSR
+    title Дело Бондаренко А. | CSSSR
     link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic")
+    // build:css styles/main.css
     link(rel="stylesheet", href="styles/sanitize.css")
     link(rel="stylesheet", href="styles/main.css")
+    // endbuild
   body
     div.fullpage
-      div.content
-        img(src="images/logo.png", alt="Логотип").logo
-        img(src="images/stamp.png", alt="Штамп").stamp
-        img(src="images/delo.png", alt="Дело").title
-        div.info-general
+      main.content
+        img(src="images/logo.png", alt="Логотип CSSSR").logo
+        img(src="images/stamp.png", alt="Штамп СЕКРЕТНО").stamp
+        h1.title
+          img(src="images/delo.png", alt="Заголовок ДЕЛО")
+        section.info-general
           div.info-general__field
             label(for="fullname") Полное ФИО
             input(type="text", name="fullname" value="Бондаренко Артём Алексеевич")
@@ -29,10 +31,10 @@ html(lang="ru")
           div.info-general__field
             label(for="email") Почта
             input(type="text", name="email" value="bonartyom@gmail.com")
-        div.info-skills
+        section.info-skills
           h2.info-skills__title Расскажите о себе чекбоксами
           p.info-skills__description Отметьте чекбоксами пункты, которые соответствуют вашим скиллам. Кстати, отсутствие опыта не означает, что у вас меньше шансов стать одним из наших товарищей. Это означает, что вы будете получать те задачи, с которыми гарантировано будете справляться.
-        div.info-skills__checkmarks-col1
+        section.info-skills__checkmarks-col1
           div.info-skills__field
             input(type="checkbox", id="methodology" name="methodology" checked)
             label(for="methodology") БЭМ/OOCSS
@@ -61,7 +63,7 @@ html(lang="ru")
             input(type="checkbox", id="es" name="es" checked)
             label(for="es") ES2015/ES2016
               img(src="images/input-checkbox-background-checked.png", alt="")
-        div.info-skills__checkmarks-col2
+        section.info-skills__checkmarks-col2
           div.info-skills__field
             input(type="checkbox", id="task_runner" name="task_runner" checked)
             label(for="task_runner") Gulp/GRUNT
@@ -90,7 +92,7 @@ html(lang="ru")
             input(type="checkbox", id="node" name="node")
             label(for="node") Знаю/изучаю Node.js
               img(src="images/input-checkbox-background-checked.png", alt="")
-        div.info-skills__checkmarks-col3
+        section.info-skills__checkmarks-col3
           div.info-skills__field
             input(type="checkbox", id="git" name="git" checked)
             label(for="git") Использую Git
@@ -112,7 +114,7 @@ html(lang="ru")
             input(type="checkbox", id="good_english" name="good_english" checked)
             label(for="good_english") <div>У меня хороший английский</div>
               img(src="images/input-checkbox-background-checked.png", alt="")
-        div.info-js
+        section.info-js
           h2.info-js__title Уровень владения JavaScript
           div.info-js__clickzone
           div.info-js__slider
@@ -124,14 +126,14 @@ html(lang="ru")
             div.caption.caption-2 Использую готовые решения
             div.caption.caption-3 Использую готовые решения и умею их переделывать
             div.caption.caption-4 Пишу сложный JS с нуля
-        div.info-about
+        section.info-about
           h2.info-about__title Расскажите о себе словами
           p.info-about__description Напишите пару предложений, чем вас привлекла наша вакансия и чего вы ожидаете от работы в CSSSR. Кстати, будет здорово, если при нехватке места для текста строки будут добавляться автоматически.
           div(contenteditable="true").info-about__textinput
             |Прежде всего вакансия привлекла возможностью прокачать навыки верстки и JS. Очень хотелось бы вырасти до разработчика и создавать качественные/интересные продукты. Еще круто, что можно работать удаленно, тем более, что я почти всю жизнь именно так и работал.
-            |Насчет компании – понравилось то, что показано здесь: https://csssr.com/ru – ценности, принципы и сама подача материала.
+            |Насчет компании – понравилось то, что показано здесь: https://csssr.com/ru – ценности/принципы и сама подача.
             |А вообще я уже пробовался к вам на разработчика (react) и даже получил позитивный фидбэк, но всё же не хватило опыта.
-        div.info-future
+        section.info-future
           h2.info-future__title Какие у вас планы на будущее?
           p.info-future__description Этот ответ ни на что не повлияет. Не беда, если в будущем ваши планы поменяются.
           div.info-future__checkmarks
@@ -147,7 +149,9 @@ html(lang="ru")
             div.info-future-field
               input(type="radio", name="future" id="other")
               label(for="other") Другое
-        div.date
+        section.date
           label(for="date") Дата заполнения
-          input(type="text", name="date" id="date" value="11.12.2018")
+          input(type="text", name="date" id="date" value="12.12.2018")
+    // build:js js/main.js
     script(src="js/main.js")
+    // endbuild

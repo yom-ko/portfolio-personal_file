@@ -135,6 +135,7 @@ gulp.task('opt:images', ['prep:images'], () => gulp
   )
   .pipe(plugins.if('*.jpeg', plugins.extReplace('.webp')))
   .pipe(plugins.if('*.jpg', plugins.extReplace('.webp')))
+  .pipe(plugins.if('*.png', plugins.extReplace('.webp')))
   .pipe(gulp.dest(paths.dist.images)));
 
 // Optimize and copy HTML, CSS, and JS files from `.tmp` to `dist` folder
@@ -145,7 +146,16 @@ gulp.task('opt:all', ['prep:pug', 'prep:styles', 'prep:js', 'opt:images'], () =>
   .pipe(plugins.if('*.css', plugins.replace(/\.(jpg|jpeg|png|gif)/g, '.webp'))) // Replace image file extensions in urls
   .pipe(plugins.if('*.css', plugins.csso({ comments: false }))) // Optimize linked CSS files
   .pipe(plugins.if('*.js', plugins.uglify())) // Optimize linked JS files
-  .pipe(plugins.htmlmin({ collapseWhitespace: true, minifyCSS: true })) // Optimize HTML files
+  .pipe(plugins.if('*.html', plugins.replace(/\.(jpg|jpeg|png|gif)/g, '.webp')))
+  .pipe(
+    plugins.if(
+      '*.html',
+      plugins.htmlmin({
+        collapseWhitespace: true,
+        minifyCSS: true,
+      }),
+    ),
+  ) // Optimize HTML files
   .pipe(gulp.dest(paths.dist.root)));
 
 /* ----------------- */

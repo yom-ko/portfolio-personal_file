@@ -20,7 +20,7 @@ clickZone.addEventListener(
       x = 755;
     }
 
-    // Move arrow pointer
+    // and move the arrow pointer accordingly
     arrow.style.left = x;
   },
   false,
