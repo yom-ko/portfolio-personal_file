@@ -97,24 +97,16 @@ gulp.task(
     });
 
     // Watch for changed and new source HTML files
-    plugins.watch(paths.src.html, () => {
-      gulp.start('prep:html');
-    });
+    plugins.watch(paths.src.html, gulp.series('prep:html'));
 
     // Watch for changed and new source SCSS/CSS files
-    plugins.watch(paths.src.styles, () => {
-      gulp.start('prep:styles');
-    });
+    plugins.watch(paths.src.styles, gulp.series('prep:styles'));
 
     // Watch for changed and new source JS files
-    plugins.watch(paths.src.js, () => {
-      gulp.start('prep:js');
-    });
+    plugins.watch(paths.src.js, gulp.series('prep:js'));
 
     // Watch for changed and new source image files
-    plugins.watch(paths.src.images, () => {
-      gulp.start('prep:images');
-    });
+    plugins.watch(paths.src.images, gulp.series('prep:images'));
   }),
 );
 

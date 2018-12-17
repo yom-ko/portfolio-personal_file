@@ -12,24 +12,21 @@ body {
 
 .fullpage {
   width: 1000px;
-  height: 2560px;
 
   margin: 0 auto;
 
-  background: url('../images/background.jpg') no-repeat;
-  background-size: cover;
+  background: url('../images/background.jpg');
 
   color: $color-text-primary;
 
-  .content {
+  & .content {
     width: 771px;
-    height: 100%;
 
     margin: 0 auto;
 
     display: grid;
     grid-template-columns: 260px 269px 242px;
-    grid-template-rows: repeat(9, max-content);
+    grid-template-rows: repeat(9, auto);
 
     & .logo {
       grid-column: 1;
@@ -240,7 +237,8 @@ body {
       grid-column: 1 / 4;
       grid-row: 6;
 
-      margin-bottom: 71px;
+      margin: 0;
+      margin-bottom: 73px;
 
       & .info-js__title {
         margin-bottom: 19px;
@@ -346,11 +344,11 @@ body {
       grid-column: 1 / 4;
       grid-row: 7;
 
-      margin-bottom: 44px;
+      margin-bottom: 45px;
 
       & .info-about__title {
         margin: 0;
-        margin-bottom: 12px;
+        margin-bottom: 13px;
       }
 
       & .info-about__description {
@@ -385,6 +383,7 @@ body {
       grid-column: 1 / 4;
       grid-row: 8;
 
+      margin: 0;
       margin-bottom: 65px;
 
       & .info-future__title {
@@ -454,6 +453,9 @@ body {
     & .date {
       grid-column: 1 / 4;
       grid-row: 9;
+
+      margin: 0;
+      margin-bottom: 73px;
 
       display: table-cell;
 
