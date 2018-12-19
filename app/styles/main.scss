@@ -28,14 +28,14 @@ body {
     grid-template-columns: 260px 269px 242px;
     grid-template-rows: repeat(9, auto);
 
-    & .logo {
-      grid-column: 1;
-      grid-row: 1;
+    // & .logo {
+    //   grid-column: 1;
+    //   grid-row: 1;
 
-      float: left;
-      margin: 0;
-      margin-top: 62px;
-    }
+    //   float: left;
+    //   margin: 0;
+    //   margin-top: 62px;
+    // }
 
     & .stamp {
       grid-column: 3;
@@ -49,12 +49,11 @@ body {
     }
 
     & .title {
-      grid-column: 2;
+      grid-column: 1 / 4;
       grid-row: 2;
 
-      display: block;
-      width: 218px;
-      margin: 0;
+      text-align: center;
+      margin-top: 67px;
       margin-bottom: 37px;
     }
 
@@ -189,20 +188,20 @@ body {
         position: relative;
       }
 
-      & a[href='https://blog.csssr.ru/'] {
+      & a[href='https://css-tricks.com/'] {
         color: #1f5f97;
         text-decoration: none;
       }
 
-      & a[href='https://blog.csssr.ru/']::after {
+      & a[href='https://css-tricks.com/']::after {
         content: '';
 
         position: absolute;
-        bottom: 1px;
-        left: 0;
+        bottom: 4px;
+        left: 1px;
 
         height: 1px;
-        width: 100%;
+        width: 97%;
 
         border: none;
         border-top: 1px solid #1f5f97;
@@ -224,7 +223,7 @@ body {
       grid-row: 5;
 
       & .info-skills__field > label > div {
-        width: 88%;
+        width: 85%;
         float: right;
       }
 

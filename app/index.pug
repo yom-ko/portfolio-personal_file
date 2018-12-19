@@ -1,8 +1,8 @@
-html(lang="ru")
+html(lang="en")
   head
     meta(charset="utf-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title Дело Бондаренко А. | CSSSR
+    title Bondarenko A. | Personal File
     link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic")
     // build:css styles/main.css
     link(rel="stylesheet", href="styles/sanitize.css")
@@ -11,33 +11,32 @@ html(lang="ru")
   body
     div.fullpage
       main.content
-        img(src="images/logo.png", alt="Логотип CSSSR").logo
-        img(src="images/stamp.png", alt="Штамп СЕКРЕТНО").stamp
+        img(src="images/confidential.png", alt="Stamp CONFIDENTIAL").stamp
         h1.title
-          img(src="images/delo.png", alt="Заголовок ДЕЛО")
+          img(src="images/personal-file.png", alt="Title PERSONAL FILE")
         section.info-general
           div.info-general__field
-            label(for="fullname") Полное ФИО
-            input(type="text", name="fullname" value="Бондаренко Артём Алексеевич")
+            label(for="full_name") Full Name
+            input(type="text", id="full_name" name="full_name" value="Bondarenko Artyom Alekseevich")
           div.info-general__field
-            label(for="birth_year") Год рождения
-            input(type="text", name="birth_year" value="1984")
+            label(for="birth_year") Year of Birth
+            input(type="text", id="birth_year" name="birth_year" value="1984")
           div.info-general__field
-            label(for="location") Место жительства
-            input(type="text", name="location" value="г. Электроугли, МО, Россия")
+            label(for="location") Address
+            input(type="text", id="address" name="address" value="Moscow Region, Russia")
           div.info-general__field
-            label(for="skype") Скайп
-            input(type="text", name="skype" value="rents5")
+            label(for="skype") Skype
+            input(type="text", id="skype" name="skype" value="rents5")
           div.info-general__field
-            label(for="email") Почта
-            input(type="text", name="email" value="bonartyom@gmail.com")
+            label(for="email") Email
+            input(type="text", id="email" name="email" value="bonartyom@gmail.com")
         section.info-skills
-          h2.info-skills__title Расскажите о себе чекбоксами
-          p.info-skills__description Отметьте чекбоксами пункты, которые соответствуют вашим скиллам. Кстати, отсутствие опыта не означает, что у вас меньше шансов стать одним из наших товарищей. Это означает, что вы будете получать те задачи, с которыми гарантировано будете справляться.
+          h2.info-skills__title About myself with checkboxes
+          p.info-skills__description
         section.info-skills__checkmarks-col1
           div.info-skills__field
             input(type="checkbox", id="methodology" name="methodology" checked)
-            label(for="methodology") БЭМ/OOCSS
+            label(for="methodology") BEM/OOCSS
               img(src="images/input-checkbox-background-checked.png", alt="")
           div.info-skills__field
             input(type="checkbox", id="templating" name="templating" checked)
@@ -49,11 +48,11 @@ html(lang="ru")
               img(src="images/input-checkbox-background-checked.png", alt="")
           div.info-skills__field
             input(type="checkbox", id="svg" name="svg")
-            label(for="svg") Работаю с SVG
+            label(for="svg") `m the God of SVG
               img(src="images/input-checkbox-background-checked.png", alt="")
           div.info-skills__field
             input(type="checkbox", id="semantics" name="semantics" checked)
-            label(for="semantics") Верстаю семантично
+            label(for="semantics") Semantic HTML
               img(src="images/input-checkbox-background-checked.png", alt="")
           div.info-skills__field
             input(type="checkbox", id="accessibility" name="accessibility")
@@ -74,7 +73,7 @@ html(lang="ru")
               img(src="images/input-checkbox-background-checked.png", alt="")
           div.info-skills__field
             input(type="checkbox", id="webgl" name="webgl")
-            label(for="webgl") Дружу с WebGL
+            label(for="webgl") WebGL is my friend
               img(src="images/input-checkbox-background-checked.png", alt="")
           div.info-skills__field
             input(type="checkbox", id="jquery" name="jquery" checked)
@@ -82,76 +81,74 @@ html(lang="ru")
               img(src="images/input-checkbox-background-checked.png", alt="")
           div.info-skills__field
             input(type="checkbox", id="angular" name="angular")
-            label(for="angular") Знаю/изучаю Angular
+            label(for="angular") know/learn Angular
               img(src="images/input-checkbox-background-checked.png", alt="")
           div.info-skills__field
             input(type="checkbox", id="react" name="react" checked)
-            label(for="react") Знаю/изучаю React
+            label(for="react") know/learn React
               img(src="images/input-checkbox-background-checked.png", alt="")
           div.info-skills__field
             input(type="checkbox", id="node" name="node")
-            label(for="node") Знаю/изучаю Node.js
+            label(for="node") know/learn Node.js
               img(src="images/input-checkbox-background-checked.png", alt="")
         section.info-skills__checkmarks-col3
           div.info-skills__field
             input(type="checkbox", id="git" name="git" checked)
-            label(for="git") Использую Git
+            label(for="git") use Git
               img(src="images/input-checkbox-background-checked.png", alt="")
           div.info-skills__field
             input(type="checkbox", id="good_eye" name="good_eye" checked)
-            label(for="good_eye") С глазомером всё ок
+            label(for="good_eye") have a good eye
               img(src="images/input-checkbox-background-checked.png", alt="")
           div.info-skills__field
-            input(type="checkbox", id="blog_csssr" name="blog_csssr")
-            label(for="blog_csssr") Читаю&nbsp;
-              span.bloglink #[a(href="https://blog.csssr.ru/", title="Блог компании CSSSR" target="_blank") blog.csssr.ru]
+            input(type="checkbox", id="csstricks" name="csstricks" checked)
+            label(for="csstricks") read&nbsp;
+              span.bloglink #[a(href="https://css-tricks.com/", title="CSS-Tricks" target="_blank") CSS-Tricks]
               img(src="images/input-checkbox-background-checked.png", alt="")
           div.info-skills__field
             input(type="checkbox", id="laziness" name="laziness")
-            label(for="laziness") Я ленивый(-ая)
+            label(for="laziness") `m lazy
               img(src="images/input-checkbox-background-checked.png", alt="")
           div.info-skills__field
             input(type="checkbox", id="good_english" name="good_english" checked)
-            label(for="good_english") <div>У меня хороший английский</div>
+            label(for="good_english") <div>My English is good enough</div>
               img(src="images/input-checkbox-background-checked.png", alt="")
         section.info-js
-          h2.info-js__title Уровень владения JavaScript
+          h2.info-js__title JavaScript proficiency
           div.info-js__clickzone
           div.info-js__slider
             div.arrow
             div.border-top
             div.notch.notch-1
             div.notch.notch-2
-            div.caption.caption-1 Не владею
-            div.caption.caption-2 Использую готовые решения
-            div.caption.caption-3 Использую готовые решения и умею их переделывать
-            div.caption.caption-4 Пишу сложный JS с нуля
+            div.caption.caption-1 WTF is JS?
+            div.caption.caption-2 Use ready-made solutions
+            div.caption.caption-3 Can customize ready-made solutions
+            div.caption.caption-4 Write sophisticated JS from scratch
         section.info-about
-          h2.info-about__title Расскажите о себе словами
-          p.info-about__description Напишите пару предложений, чем вас привлекла наша вакансия и чего вы ожидаете от работы в CSSSR. Кстати, будет здорово, если при нехватке места для текста строки будут добавляться автоматически.
+          h2.info-about__title About myself with words
+          p.info-about__description
           div(contenteditable="true").info-about__textinput
-            |Прежде всего вакансия привлекла возможностью прокачать навыки верстки и JS. Очень хотелось бы вырасти до разработчика и создавать качественные/интересные продукты. Еще круто, что можно работать удаленно, тем более, что я почти всю жизнь именно так и работал.
-            |Насчет компании – понравилось то, что показано здесь: https://csssr.com/ru – ценности/принципы и сама подача.
-            |А вообще я уже пробовался к вам на разработчика (react) и даже получил позитивный фидбэк, но всё же не хватило опыта.
+            |First of all...
         section.info-future
-          h2.info-future__title Какие у вас планы на будущее?
-          p.info-future__description Этот ответ ни на что не повлияет. Не беда, если в будущем ваши планы поменяются.
+          h2.info-future__title Plans for the future
+          p.info-future__description
           div.info-future__checkmarks
             div.info-future-field
               input(type="radio", name="future" id="css")
-              label(for="css") Верстать
+              label(for="css") Write plain CSS
             div.info-future-field
               input(type="radio", name="future" id="js" checked)
-              label(for="js") Прокачиваться в JS
+              label(for="js") Hone JS skills
             div.info-future-field
               input(type="radio", name="future" id="management")
-              label(for="management") Менеджерство
+              label(for="management") Become a manager
             div.info-future-field
-              input(type="radio", name="future" id="other")
-              label(for="other") Другое
+              input(type="radio", name="future" id="not_listed")
+              label(for="not_listed") Not listed
         section.date
-          label(for="date") Дата заполнения
-          input(type="text", name="date" id="date" value="12.12.2018")
+          label(for="date") Date of filling
+          input(type="text", name="date" id="date" value="2018/12/12")
     // build:js js/main.js
     script(src="js/main.js")
     // endbuild
