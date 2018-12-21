@@ -1,151 +1,19 @@
 html(lang="en")
-  head
-    meta(charset="utf-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title Bondarenko A. | Personal File
-    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic")
-    // build:css styles/main.css
-    link(rel="stylesheet", href="styles/sanitize.css")
-    link(rel="stylesheet", href="styles/main.css")
-    // endbuild
+  include includes/head.pug
   body
     div.fullpage
       main.content
         img(src="images/confidential.png", alt="Stamp CONFIDENTIAL").stamp
         h1.title
           img(src="images/personal-file.png", alt="Title PERSONAL FILE")
-        section.info-general
-          div.info-general__field
-            label(for="full_name") Full Name
-            input(type="text", id="full_name" name="full_name" value="Bondarenko Artyom")
-          div.info-general__field
-            label(for="birth_year") Year of Birth
-            input(type="text", id="birth_year" name="birth_year" value="1984")
-          div.info-general__field
-            label(for="location") Address
-            input(type="text", id="address" name="address" value="Moscow Region, Russia")
-          div.info-general__field
-            label(for="skype") Skype
-            input(type="text", id="skype" name="skype" value="rents5")
-          div.info-general__field
-            label(for="email") Email
-            input(type="text", id="email" name="email" value="bonartyom@gmail.com")
-        section.info-skills
-          h2.info-skills__title About myself with checkboxes
-          p.info-skills__description
-        section.info-skills__checkmarks-col1
-          div.info-skills__field
-            input(type="checkbox", id="methodology" name="methodology" checked)
-            label(for="methodology") BEM/OOCSS
-              img(src="images/input-checkbox-background-checked.png", alt="")
-          div.info-skills__field
-            input(type="checkbox", id="templating" name="templating" checked)
-            label(for="templating") Pug(Jade)
-              img(src="images/input-checkbox-background-checked.png", alt="")
-          div.info-skills__field
-            input(type="checkbox", id="preprocessor" name="preprocessor" checked)
-            label(for="preprocessor") Stylus/Less/SASS
-              img(src="images/input-checkbox-background-checked.png", alt="")
-          div.info-skills__field
-            input(type="checkbox", id="svg" name="svg")
-            label(for="svg") `m the God of SVG
-              img(src="images/input-checkbox-background-checked.png", alt="")
-          div.info-skills__field
-            input(type="checkbox", id="semantics" name="semantics" checked)
-            label(for="semantics") Semantic HTML
-              img(src="images/input-checkbox-background-checked.png", alt="")
-          div.info-skills__field
-            input(type="checkbox", id="accessibility" name="accessibility")
-            label(for="accessibility") Accessibility (A11Y)
-              img(src="images/input-checkbox-background-checked.png", alt="")
-          div.info-skills__field
-            input(type="checkbox", id="es" name="es" checked)
-            label(for="es") ES2015/ES2016
-              img(src="images/input-checkbox-background-checked.png", alt="")
-        section.info-skills__checkmarks-col2
-          div.info-skills__field
-            input(type="checkbox", id="task_runner" name="task_runner" checked)
-            label(for="task_runner") Gulp/GRUNT
-              img(src="images/input-checkbox-background-checked.png", alt="")
-          div.info-skills__field
-            input(type="checkbox", id="bundler" name="bundler" checked)
-            label(for="bundler") Webpack
-              img(src="images/input-checkbox-background-checked.png", alt="")
-          div.info-skills__field
-            input(type="checkbox", id="webgl" name="webgl")
-            label(for="webgl") WebGL is my friend
-              img(src="images/input-checkbox-background-checked.png", alt="")
-          div.info-skills__field
-            input(type="checkbox", id="jquery" name="jquery" checked)
-            label(for="jquery") jQuery
-              img(src="images/input-checkbox-background-checked.png", alt="")
-          div.info-skills__field
-            input(type="checkbox", id="angular" name="angular")
-            label(for="angular") know/learn Angular
-              img(src="images/input-checkbox-background-checked.png", alt="")
-          div.info-skills__field
-            input(type="checkbox", id="react" name="react" checked)
-            label(for="react") know/learn React
-              img(src="images/input-checkbox-background-checked.png", alt="")
-          div.info-skills__field
-            input(type="checkbox", id="node" name="node")
-            label(for="node") know/learn Node.js
-              img(src="images/input-checkbox-background-checked.png", alt="")
-        section.info-skills__checkmarks-col3
-          div.info-skills__field
-            input(type="checkbox", id="git" name="git" checked)
-            label(for="git") use Git
-              img(src="images/input-checkbox-background-checked.png", alt="")
-          div.info-skills__field
-            input(type="checkbox", id="good_eye" name="good_eye" checked)
-            label(for="good_eye") have a good eye
-              img(src="images/input-checkbox-background-checked.png", alt="")
-          div.info-skills__field
-            input(type="checkbox", id="csstricks" name="csstricks" checked)
-            label(for="csstricks") read&nbsp;
-              span.bloglink #[a(href="https://css-tricks.com/", title="CSS-Tricks" target="_blank") CSS-Tricks]
-              img(src="images/input-checkbox-background-checked.png", alt="")
-          div.info-skills__field
-            input(type="checkbox", id="laziness" name="laziness")
-            label(for="laziness") `m lazy
-              img(src="images/input-checkbox-background-checked.png", alt="")
-          div.info-skills__field
-            input(type="checkbox", id="good_english" name="good_english" checked)
-            label(for="good_english") <div>My English is good enough</div>
-              img(src="images/input-checkbox-background-checked.png", alt="")
-        section.info-js
-          h2.info-js__title JavaScript proficiency
-          div.info-js__clickzone
-          div.info-js__slider
-            div.arrow
-            div.border-top
-            div.notch.notch-1
-            div.notch.notch-2
-            div.caption.caption-1 WTF is JS?
-            div.caption.caption-2 Use ready-made solutions
-            div.caption.caption-3 Can customize ready-made solutions
-            div.caption.caption-4 Write sophisticated JS from scratch
-        section.info-about
-          h2.info-about__title About myself with words
-          p.info-about__description
-          div(contenteditable="true").info-about__textinput
-            |First of all...
-        section.info-future
-          h2.info-future__title Plans for the future
-          p.info-future__description
-          div.info-future__checkmarks
-            div.info-future-field
-              input(type="radio", name="future" id="css")
-              label(for="css") Write plain CSS
-            div.info-future-field
-              input(type="radio", name="future" id="js" checked)
-              label(for="js") Hone JS skills
-            div.info-future-field
-              input(type="radio", name="future" id="management")
-              label(for="management") Become a manager
-            div.info-future-field
-              input(type="radio", name="future" id="not_listed")
-              label(for="not_listed") Not listed
+        include includes/info-general.pug
+        include includes/info-skills/info-skills.pug
+        include includes/info-skills/info-skills__checkmarks-col1.pug
+        include includes/info-skills/info-skills__checkmarks-col2.pug
+        include includes/info-skills/info-skills__checkmarks-col3.pug
+        include includes/info-js.pug
+        include includes/info-about.pug
+        include includes/info-future.pug
         section.date
           label(for="date") Date of filling
           input(type="text", name="date" id="date" value="2018/12/12")
