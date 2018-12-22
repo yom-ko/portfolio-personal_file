@@ -1,22 +1,22 @@
 html(lang="en")
-  include includes/head.pug
+  include includes/head
   body
     div.fullpage
       main.content
-        img(src="images/confidential.png", alt="Stamp CONFIDENTIAL").stamp
+        img(src="images/confidential.png" alt="Stamp CONFIDENTIAL").stamp
         h1.title
-          img(src="images/personal-file.png", alt="Title PERSONAL FILE")
-        include includes/info-general.pug
-        include includes/info-skills/info-skills.pug
-        include includes/info-skills/info-skills__checkmarks-col1.pug
-        include includes/info-skills/info-skills__checkmarks-col2.pug
-        include includes/info-skills/info-skills__checkmarks-col3.pug
-        include includes/info-js.pug
-        include includes/info-about.pug
-        include includes/info-future.pug
+          img(src="images/personal-file.png" alt="Title PERSONAL FILE")
+        include includes/info-general
+        include includes/info-skills/info-skills
+        include includes/info-skills/info-skills__checkmarks-col1
+        include includes/info-skills/info-skills__checkmarks-col2
+        include includes/info-skills/info-skills__checkmarks-col3
+        include includes/info-js
+        include includes/info-about
+        include includes/info-future
         section.date
           label(for="date") Date of filling
-          input(type="text", name="date" id="date" value="2018/12/12")
+          input(type="text" name="date" id="date" value="2018/12/12")
     // build:js js/main.js
     script(src="js/main.js")
     // endbuild

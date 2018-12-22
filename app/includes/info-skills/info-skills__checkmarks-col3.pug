@@ -1,22 +1,26 @@
+-
+  const items3 = [
+    { name: 'git', label: 'use Git', checked: true },
+    { name: 'good_eye', label: 'have a good eye', checked: true },
+    { name: 'csstricks', label: '', checked: true },
+    { name: 'laziness', label: '`m lazy', checked: false },
+    { name: 'good_english', label: '', checked: true },
+  ];
+
+mixin field(name, label, checked)
+  div.info-skills__field
+    input(type="checkbox" id=name name=name checked=checked)
+    if name === 'csstricks'
+      label(for=name) read&nbsp;
+        span.bloglink #[a(href="https://css-tricks.com/" title="CSS-Tricks" target="_blank") CSS-Tricks]
+        img(src="images/input-checkbox-background-checked.png" alt="Checkmark")
+    else if name === 'good_english'
+      label(for=name) <div>My English is good enough</div>
+        img(src="images/input-checkbox-background-checked.png" alt="Checkmark")
+    else
+      label(for=name)=label
+        img(src="images/input-checkbox-background-checked.png" alt="Checkmark")
+
 section.info-skills__checkmarks-col3
-  div.info-skills__field
-    input(type="checkbox", id="git" name="git" checked)
-    label(for="git") use Git
-      img(src="images/input-checkbox-background-checked.png", alt="")
-  div.info-skills__field
-    input(type="checkbox", id="good_eye" name="good_eye" checked)
-    label(for="good_eye") have a good eye
-      img(src="images/input-checkbox-background-checked.png", alt="")
-  div.info-skills__field
-    input(type="checkbox", id="csstricks" name="csstricks" checked)
-    label(for="csstricks") read&nbsp;
-      span.bloglink #[a(href="https://css-tricks.com/", title="CSS-Tricks" target="_blank") CSS-Tricks]
-      img(src="images/input-checkbox-background-checked.png", alt="")
-  div.info-skills__field
-    input(type="checkbox", id="laziness" name="laziness")
-    label(for="laziness") `m lazy
-      img(src="images/input-checkbox-background-checked.png", alt="")
-  div.info-skills__field
-    input(type="checkbox", id="good_english" name="good_english" checked)
-    label(for="good_english") <div>My English is good enough</div>
-      img(src="images/input-checkbox-background-checked.png", alt="")
+  each item in items3
+    +field(item.name, item.label, item.checked)
