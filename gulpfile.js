@@ -111,7 +111,7 @@ gulp.task(
 );
 
 /* ----------------- */
-// Optimization Tasks
+// Production Tasks
 /* ----------------- */
 
 // Clean `dist` folder
@@ -124,7 +124,7 @@ gulp.task('clean:dist', (done) => {
 gulp.task(
   'opt:images',
   gulp.series('prep:images', () => gulp
-    .src(`${paths.tmp.images}/**/*.{jpg,jpeg,png,gif,svg}`)
+    .src(`${paths.tmp.images}/**/*.{png,jpg,jpeg,gif,svg}`)
     .pipe(plugins.plumber())
     .pipe(
       plugins.imagemin([

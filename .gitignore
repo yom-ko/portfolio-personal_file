@@ -1,9 +1,17 @@
-# Project dependencies
-.cache
-node_modules
-yarn-error.log
+# Dependency dirs
+/node_modules/
 
-# Build and temp directory
-/public
-/dist
-/.tmp
+# Build and temp dirs
+/public/
+/build/
+/prod/
+/dist/
+/.tmp/
+/.cache/
+
+# Logs
+/logs/
+/*.log
+
+# IDE's local config
+/.vscode/

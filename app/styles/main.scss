@@ -28,24 +28,15 @@ body {
     grid-template-columns: 260px 269px 242px;
     grid-template-rows: repeat(9, auto);
 
-    // & .logo {
-    //   grid-column: 1;
-    //   grid-row: 1;
-
-    //   float: left;
-    //   margin: 0;
-    //   margin-top: 62px;
-    // }
-
     & .stamp {
       grid-column: 3;
       grid-row: 1;
 
       position: relative;
-      right: -21.6%;
+      right: -60px;
 
       margin: 0;
-      margin-top: 48px;
+      margin-top: 46px;
     }
 
     & .title {
