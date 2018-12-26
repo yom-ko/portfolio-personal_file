@@ -10,11 +10,11 @@
   ];
 
 mixin field(name, label, checked)
-  div.info-skills__field
-    input(type="checkbox" id=name name=name checked=checked)
-    label(for=name)=label
-      img(src="images/input-checkbox-background-checked.png" alt="Checkmark")
+  div.info-skills-field
+    input(type="checkbox" id=name name=name checked=checked).info-skills-field__input
+    label(for=name).info-skills-field__label=label
+      img(src="images/input-checkbox-background-checked.png" alt="Checkmark").info-skills-field__tick-image
 
-section.info-skills__checkmarks-col1
+section.info-skills-checkmarks-col1
   each item in items1
     +field(item.name, item.label, item.checked)

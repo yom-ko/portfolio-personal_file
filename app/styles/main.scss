@@ -19,7 +19,7 @@ body {
 
   color: $color-text-primary;
 
-  & .content {
+  .content {
     width: 771px;
 
     margin: 0 auto;
@@ -28,7 +28,7 @@ body {
     grid-template-columns: 260px 269px 242px;
     grid-template-rows: repeat(9, auto);
 
-    & .stamp {
+    .stamp {
       grid-column: 3;
       grid-row: 1;
 
@@ -39,7 +39,7 @@ body {
       margin-top: 46px;
     }
 
-    & .title {
+    .title {
       grid-column: 1 / 4;
       grid-row: 2;
 
@@ -48,14 +48,14 @@ body {
       margin-bottom: 37px;
     }
 
-    & .info-general {
+    .info-general {
       grid-column: 1/4;
       grid-row: 3;
 
       margin: 0;
       margin-bottom: 65px;
 
-      & .info-general__field {
+      .info-general__field {
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
@@ -63,12 +63,12 @@ body {
 
         height: 62px;
 
-        & label {
+        label {
           font-size: 1.35em;
           font-weight: bold;
         }
 
-        & input {
+        input {
           flex: auto;
 
           margin-left: 17px;
@@ -88,24 +88,24 @@ body {
           line-height: 32px;
         }
 
-        & input:focus {
+        input:focus {
           outline: none;
         }
       }
     }
 
-    & .info-skills {
+    .info-skills {
       grid-column: 1/4;
       grid-row: 4;
 
       padding: 0;
 
-      & .info-skills__title {
+      .info-skills__title {
         margin: 0;
         margin-bottom: 8px;
       }
 
-      & .info-skills__description {
+      .info-skills__description {
         margin: 0;
         margin-bottom: 27px;
 
@@ -116,15 +116,15 @@ body {
       }
     }
 
-    & [class^='info-skills__checkmarks'] {
+    [class^='info-skills-checkmarks'] {
+      margin-bottom: 30px;
+
       color: $color-text-checkbox;
       font-size: 1.3em;
       font-weight: bold;
-
-      margin-bottom: 30px;
     }
 
-    & .info-skills__field {
+    .info-skills-field {
       position: relative;
 
       margin: 0;
@@ -135,26 +135,28 @@ body {
       justify-content: flex-start;
       align-items: center;
 
-      & input {
+      .info-skills-field__input {
         opacity: 0;
         position: absolute;
         cursor: pointer;
       }
 
-      & input + label > img {
-        position: absolute;
+      .info-skills-field__tick-image {
         visibility: hidden;
+
+        position: absolute;
         top: -5px;
         left: 3px;
+
         cursor: pointer;
       }
 
-      & input + label,
-      & input + label::before {
+      .info-skills-field__label,
+      .info-skills-field__label::before {
         cursor: pointer;
       }
 
-      & input + label::before {
+      .info-skills-field__label::before {
         content: '';
         display: inline-block;
 
@@ -171,70 +173,72 @@ body {
         vertical-align: middle;
       }
 
-      & input:checked + label > img {
+      .info-skills-field__input:checked
+        + .info-skills-field__label
+        .info-skills-field__tick-image {
         visibility: visible;
       }
 
-      & .bloglink {
+      .bloglink {
         position: relative;
       }
 
-      & a[href='https://css-tricks.com/'] {
+      .bloglink a {
         color: #1f5f97;
         text-decoration: none;
       }
 
-      & a[href='https://css-tricks.com/']::after {
+      .bloglink a::after {
         content: '';
 
         position: absolute;
         bottom: 4px;
         left: 1px;
 
-        height: 1px;
         width: 97%;
+        height: 1px;
 
         border: none;
         border-top: 1px solid #1f5f97;
       }
     }
 
-    & .info-skills__checkmarks-col1 {
+    .info-skills-checkmarks-col1 {
       grid-column: 1;
       grid-row: 5;
     }
 
-    & .info-skills__checkmarks-col2 {
+    .info-skills-checkmarks-col2 {
       grid-column: 2;
       grid-row: 5;
     }
 
-    & .info-skills__checkmarks-col3 {
+    .info-skills-checkmarks-col3 {
       grid-column: 3;
       grid-row: 5;
 
-      & .info-skills__field > label > div {
+      .info-skills-field > label > div {
         width: 85%;
         float: right;
       }
 
-      & .info-skills__field:last-child input + label > img {
+      .info-skills-field:last-child input + label > img {
         top: -10px;
       }
     }
 
-    & .info-js {
+    .info-js {
       grid-column: 1 / 4;
       grid-row: 6;
 
       margin: 0;
       margin-bottom: 73px;
 
-      & .info-js__title {
+      .info-js__title {
         margin-bottom: 19px;
       }
 
-      & .info-js__clickzone {
+      .info-js__clickzone {
         width: 100%;
         height: 24px;
 
@@ -242,7 +246,7 @@ body {
         padding: 0;
       }
 
-      & .info-js__slider {
+      .info-js__slider {
         position: relative;
 
         width: 769px;
@@ -253,7 +257,7 @@ body {
         border-left: 3px solid #3f241e;
         border-right: 3px solid #3f241e;
 
-        & .arrow {
+        .arrow {
           position: absolute;
 
           left: 367px; // My current level of JS
@@ -266,7 +270,7 @@ body {
           transition: all 0.3s ease-out;
         }
 
-        & .border-top {
+        .border-top {
           position: relative;
           top: -2px;
 
@@ -281,7 +285,7 @@ body {
         }
       }
 
-      & .notch {
+      .notch {
         position: absolute;
         top: 2;
 
@@ -299,7 +303,7 @@ body {
         }
       }
 
-      & .caption {
+      .caption {
         position: absolute;
         top: 34px;
 
@@ -330,18 +334,18 @@ body {
       }
     }
 
-    & .info-about {
+    .info-about {
       grid-column: 1 / 4;
       grid-row: 7;
 
       margin-bottom: 45px;
 
-      & .info-about__title {
+      .info-about__title {
         margin: 0;
         margin-bottom: 13px;
       }
 
-      & .info-about__description {
+      .info-about__description {
         margin: 0;
         margin-bottom: 23px;
 
@@ -349,7 +353,7 @@ body {
         line-height: $lineHeight-paragraph;
       }
 
-      & .info-about__textinput {
+      .info-about__input {
         width: 100%;
 
         background: transparent url('../images/input-textarea-background.png');
@@ -364,32 +368,32 @@ body {
         line-height: 60px;
       }
 
-      & .info-about__textinput:focus {
+      .info-about__input:focus {
         outline: none;
       }
     }
 
-    & .info-future {
+    .info-future {
       grid-column: 1 / 4;
       grid-row: 8;
 
       margin: 0;
       margin-bottom: 65px;
 
-      & .info-future__title {
+      .info-future__title {
         margin: 0;
         margin-bottom: 10px;
       }
 
-      & .info-future__description {
+      .info-future__description {
         margin: 0;
         margin-bottom: 9px;
 
         font-size: $fontSize-paragraph;
       }
 
-      & .info-future__checkmarks {
-        & .info-future-field {
+      .info-future__checkmarks {
+        .info-future-field {
           position: relative;
 
           margin: 0;
@@ -397,18 +401,18 @@ body {
 
           display: inline-block;
 
-          & input {
+          .info-future-field__input {
             opacity: 0;
             position: absolute;
             cursor: pointer;
           }
 
-          & input + label,
-          & input + label::before {
+          .info-future-field__label,
+          .info-future-field__label::before {
             cursor: pointer;
           }
 
-          & input + label {
+          .info-future-field__label {
             margin: 0;
             margin-left: -8px;
 
@@ -419,7 +423,7 @@ body {
             vertical-align: middle;
           }
 
-          & input + label::before {
+          .info-future-field__label::before {
             content: url('../images/input-radio-border.png');
             display: inline-block;
 
@@ -431,7 +435,8 @@ body {
             vertical-align: middle;
           }
 
-          & input:checked + label::before {
+          .info-future-field__input:checked
+            + .info-future-field__label::before {
             background: url('../images/input-radio-background-checked.png');
             background-repeat: no-repeat;
             background-position: 48% 70%;
@@ -440,7 +445,7 @@ body {
       }
     }
 
-    & .date {
+    .date {
       grid-column: 1 / 4;
       grid-row: 9;
 
@@ -449,7 +454,7 @@ body {
 
       display: table-cell;
 
-      & label {
+      .date__label {
         display: inline-block;
         vertical-align: bottom;
 
@@ -457,7 +462,7 @@ body {
         font-weight: bold;
       }
 
-      & input {
+      .date__input {
         display: inline-block;
         vertical-align: bottom;
 
@@ -479,7 +484,7 @@ body {
         line-height: 1.5;
       }
 
-      & input:focus {
+      .date__input:focus {
         outline: none;
       }
     }

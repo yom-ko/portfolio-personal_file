@@ -1,0 +1,26 @@
+-
+  const items3 = [
+    { name: 'git', label: 'use Git', checked: true },
+    { name: 'good_eye', label: 'have a good eye', checked: true },
+    { name: 'csstricks', label: '', checked: true },
+    { name: 'laziness', label: '`m lazy', checked: false },
+    { name: 'good_english', label: '', checked: true },
+  ];
+
+mixin field(name, label, checked)
+  div.info-skills-field
+    input(type="checkbox" id=name name=name checked=checked).info-skills-field__input
+    if name === 'csstricks'
+      label(for=name).info-skills-field__label read&nbsp;
+        span.bloglink #[a(href="https://css-tricks.com/" title="CSS-Tricks" target="_blank") CSS-Tricks]
+        img(src="images/input-checkbox-background-checked.png" alt="Checkmark").info-skills-field__tick-image
+    else if name === 'good_english'
+      label(for=name).info-skills-field__label <div>My English is good enough</div>
+        img(src="images/input-checkbox-background-checked.png" alt="Checkmark").info-skills-field__tick-image
+    else
+      label(for=name).info-skills-field__label=label
+        img(src="images/input-checkbox-background-checked.png" alt="Checkmark").info-skills-field__tick-image
+
+section.info-skills-checkmarks-col3
+  each item in items3
+    +field(item.name, item.label, item.checked)
